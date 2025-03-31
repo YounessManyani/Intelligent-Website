@@ -15,6 +15,7 @@ app.use(cors());
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 10000,
 }).then(() => console.log('MongoDB Connected'))
   .catch(err => console.error(err));
 
